@@ -6,6 +6,7 @@ import argparse
 import pathlib
 
 import day01.solvers
+import day02.solvers
 
 def get_lines_from_path(path: pathlib.Path) -> list[str]:
     """Return a list with the contents of all lines of the file in path."""
@@ -44,7 +45,8 @@ def __main() -> None:
     part = args.part
 
     solvers = {
-        1: {1: day01.solvers.solve_part1, 2: day01.solvers.solve_part2}
+        1: {1: day01.solvers.solve_part1, 2: day01.solvers.solve_part2},
+        2: {1: day02.solvers.solve_part1, 2: day02.solvers.solve_part2}
     }
     try:
         solver = solvers[args.day][args.part]
